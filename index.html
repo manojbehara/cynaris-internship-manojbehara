@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern JavaScript Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">JavaScript Workshop</p>
+        <h1>Modern array tools</h1>
+      </div>
+      <div class="dataset-count" aria-live="polite">
+        <strong id="visible-count">0</strong>
+        <span>employees</span>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Employee filters">
+      <label class="search-field" for="search-input">
+        <span>Search</span>
+        <input id="search-input" type="search" placeholder="Name or role…" autocomplete="off">
+      </label>
+
+      <fieldset>
+        <legend>Department</legend>
+        <div class="department-buttons" id="department-buttons">
+          <button class="filter-button active" type="button" data-department="All">All</button>
+        </div>
+      </fieldset>
+
+      <label class="sort-field" for="sort-select">
+        <span>Sort by</span>
+        <select id="sort-select">
+          <option value="name">Name</option>
+          <option value="salary-desc">Salary: high to low</option>
+          <option value="salary-asc">Salary: low to high</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="summary" aria-label="Filtered employee summary">
+      <article>
+        <span>Average salary</span>
+        <strong id="average-salary">—</strong>
+      </article>
+      <article>
+        <span>Highest salary</span>
+        <strong id="highest-salary">—</strong>
+      </article>
+      <article>
+        <span>Departments</span>
+        <strong id="department-total">—</strong>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Team directory</h2>
+        <button id="reset-button" type="button">Reset filters</button>
+      </div>
+      <div id="employee-grid" class="employee-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
